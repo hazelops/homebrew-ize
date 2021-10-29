@@ -7,8 +7,6 @@ class Ize < Formula
   url "https://github.com/hazelops/ize/releases/download/#{version}/macOS"
 
     def install
-      mv macOS, ize
-      bin.install "bin/ize"
+      bin.install "macOS" => "ize"
     end
-
 end
