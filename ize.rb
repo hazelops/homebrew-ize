@@ -11,7 +11,4 @@ class Ize < Formula
       bin.install "bin/ize"
     end
 
-    test do
-      system "#{bin}/ize --help"
-    end
-  end
+end
