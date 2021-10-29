@@ -13,7 +13,7 @@ class Ize < Formula
     end
 
     test do
-      system "#{bin}/ize --help"
+      system "#{bin}/ize"
     end
   end
 end
