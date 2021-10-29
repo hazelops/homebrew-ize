@@ -14,3 +14,4 @@ class Ize < Formula
     test do
       system "#{bin}/ize --help"
     end
+end
