@@ -11,7 +11,7 @@ class IzeDev < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "aae2bbfb28237dd869ec171eec166c306da52ecae834a363b996919a2aadbace"
+      sha256 "e6814092773322315728b3f8e1eedeba274d42f0efef388b96a3eea18bb672d0"
 
       def install
         bin.install "ize"
@@ -19,7 +19,7 @@ class IzeDev < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "918c084c68257a035cecb7f3c5951f7e5ef0aaa3f9374c1dc6cd16d16bec3e3a"
+      sha256 "5426a8a15574a56d5884db2df1610669431b553baebe4eac5ad17c295e04c1f7"
 
       def install
         bin.install "ize"
@@ -30,7 +30,7 @@ class IzeDev < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "72ec42e85ab73fcfedf2a5d1744e7aaecf24d030a4be0cd0ef4bcbf37450d530"
+      sha256 "46d409930004c6b8b64a8d2505c13e12a9dfbd9c5801d6766f42a9f894a09241"
 
       def install
         bin.install "ize"
@@ -38,7 +38,7 @@ class IzeDev < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "6f18bc662c02ec647997bb4b6725b26c9f4e69a6d1ef17d4f78f3214cf52994f"
+      sha256 "07b09a1fa071eeba1bc9aa6e733a1d2c86198486f33f5066d55989a7557ba3de"
 
       def install
         bin.install "ize"
