@@ -5,21 +5,21 @@
 class Ize < Formula
   desc "IZE is an opinionated infrastructure wrapper that allows to use multiple tools in one infra"
   homepage "https://ize.sh/"
-  version "0.4.3"
+  version "0.0.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/0.4.3/ize_0.4.3_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "0216a3d73ff2a9523cf2ce7b60338ea4a2cae98e4f87063c13e322593bb3d172"
+      url "https://github.com/kobrikx/test/releases/download/0.0.10/ize_0.0.10_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e8efdfd77c9b6cf5ae1745fd2f9af4be33932d266a758e9229658b1463626c9b"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/0.4.3/ize_0.4.3_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "4c6ffacc7bb0c7f6bb9a3357ccf1b156a8edf4a3dfd48c1a204e5a214ed6cc71"
+      url "https://github.com/kobrikx/test/releases/download/0.0.10/ize_0.0.10_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "71c7d6eae6a30eea56a4d9571cdeba80469a30faa00b643cfaf7d9572689a99d"
 
       def install
         bin.install "ize"
@@ -28,17 +28,17 @@ class Ize < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/0.4.3/ize_0.4.3_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c39d298b3d5722a8b40b9b231314ba4aa563a1f631f2fb2637270623a9d5e657"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kobrikx/test/releases/download/0.0.10/ize_0.0.10_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "16dd5ac37aeb96eaafe198afb0f6a73e7fb7847c2443a76a02510916d79afcc8"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/0.4.3/ize_0.4.3_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "f566ef5190e7aec4a4185d25f600ec6e79d8c9b63ce507686a93c636a241456b"
+    if Hardware::CPU.intel?
+      url "https://github.com/kobrikx/test/releases/download/0.0.10/ize_0.0.10_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "286a82a9ab52fc94d713224e1269d341f6cb32e4710e0cd1d5ea00c5642528b7"
 
       def install
         bin.install "ize"
