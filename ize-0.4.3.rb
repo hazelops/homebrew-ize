@@ -11,7 +11,7 @@ class Ize043 < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.4.3/ize_0.4.3_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "550f8230f3dbb7e184db828dbd328cc539c73f842b00491c23d30a834345984f"
+      sha256 "4c6ffacc7bb0c7f6bb9a3357ccf1b156a8edf4a3dfd48c1a204e5a214ed6cc71"
 
       def install
         bin.install "ize"
