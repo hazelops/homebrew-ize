@@ -11,7 +11,7 @@ class IzeDev < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "f29eaa1231ce56f7b646a4309627f5ffcc791ccc9592188a34a48adcee87b1c2"
+      sha256 "1ba3b898f8767c7ee3e84d63983e1ffa1ee02eadc60854534fcd7a04c7fcaf36"
 
       def install
         bin.install "ize"
@@ -19,7 +19,7 @@ class IzeDev < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "f6d3bc0f74dbc025edadef5e4bea7e0a6666e5cd6ff6d63e5bc2338ef6fb0d12"
+      sha256 "f41da88b3945b1aee1eb544faa1fd76fd929775bf54e1e49741b3c622e94d426"
 
       def install
         bin.install "ize"
@@ -28,17 +28,17 @@ class IzeDev < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "688443d3a6053047eff0cb2ea24d5c54a0caa175a30049e64e91476b836fc44d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "7fbe179cb28e6e37a828687c85d1ae767c7e74ed056a3e1097562503426143b3"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "9fe57a98c6dab35355aba7aa7b5ce6ebc9c55623f74bee7e0d735ef146df6347"
+    if Hardware::CPU.intel?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "252f686748aca3ca5d05e31ec37053adca046468e07c346b1a41e91599220b18"
 
       def install
         bin.install "ize"
