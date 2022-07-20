@@ -10,16 +10,16 @@ class Ize < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.1/ize_1.1.1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "f17fe15872850fdded87cacb1afaf4e872c865f867d1cbd90069db345d269d41"
+      url "https://github.com/hazelops/ize/releases/download/1.1.1/ize_1.1.1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "f58e817d922d3b85676ea5f5aef5e5c249ae3bf8455d7735a64390743c25a4a9"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.1/ize_1.1.1_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "7a6a47b0b90bbfd753bf6ca260709284b241edfa2d8fea2d75b8856b5fa1eb4d"
+      url "https://github.com/hazelops/ize/releases/download/1.1.1/ize_1.1.1_darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "92f9e1e437c274ef26c93a968be6b5a2ab41c00cfc065e12a4e4e412dc915147"
 
       def install
         bin.install "ize"
@@ -28,17 +28,17 @@ class Ize < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.1/ize_1.1.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "3a15f3b9d4b03ee5c9ac958639b6512ad224bd81873c2211f5bc7a64c45ce7d5"
+    if Hardware::CPU.intel?
+      url "https://github.com/hazelops/ize/releases/download/1.1.1/ize_1.1.1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "4a3892b2cbc6a12f07a4be7fffdcb5f84e70036b91dff2f8ca9105c7b2c410dd"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.1/ize_1.1.1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "c547ec3724d3882c79b29ad986d39773e0c17cb761b3aef62512724f8f500bdd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hazelops/ize/releases/download/1.1.1/ize_1.1.1_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "e8020d687479c93dce5a8358b380aaa1f6afd003ead9ce450ad2bce60774093d"
 
       def install
         bin.install "ize"
