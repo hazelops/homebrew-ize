@@ -9,17 +9,17 @@ class IzeDev < Formula
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "60d17954b80b8f6a6eb6f1f0b13dc9885340c7ba6fac30e2e7f5c9b01a2fd8fd"
+    if Hardware::CPU.arm?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "0bf4ebe8e67018a7b7fa861f209d03fd00fd11f89256dab11416305a37cf76f9"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b6f3601d514d69f40b9b72f01cfbd15a30188e70fbe6788fba93c8490574dd1f"
+    if Hardware::CPU.intel?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "c4cbd63c7a8cbc08a71ad607309d6038b5f706cb430c38104c2a53a4e951cd33"
 
       def install
         bin.install "ize"
@@ -30,7 +30,7 @@ class IzeDev < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a65e9cd72a151a5d21b6f5c5cb00ed0e94802edf74f5b5f14eae231ab69be799"
+      sha256 "4c70ac4a941668d05514efa0800b71b30ea8cec0959d65ee1ca66c7eb93d9e9e"
 
       def install
         bin.install "ize"
@@ -38,7 +38,7 @@ class IzeDev < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e992dd00c6d719658fdca7137c4e0687a92f2c3bf2cf6116692d807c27142217"
+      sha256 "99d0e0dd801339ec0b0e335a5aa75bff1821a17083ca74d436dcd451d77fb0f9"
 
       def install
         bin.install "ize"
