@@ -9,17 +9,17 @@ class Ize < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6853c7c24b3757b6f551aa77cf45a445c0331b82dc8e8df4b7a7839e53e71a52"
+    if Hardware::CPU.intel?
+      url "https://github.com/hazelops/ize/releases/download/v1.1.7/ize_1.1.7_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "ed6f7ab77de2c42b86115981585fbc156b64fb7d465bcd85da4e43b10bdfce2d"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "300762f6f2d0dba6c950243e2f4fa25c582c17cfda09e5413e5dd73425e9b756"
+    if Hardware::CPU.arm?
+      url "https://github.com/hazelops/ize/releases/download/v1.1.7/ize_1.1.7_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "cc6111b0806f0154612f6f6e03758f163cb6f594d9fbac691f8c787e636a420a"
 
       def install
         bin.install "ize"
@@ -29,16 +29,16 @@ class Ize < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "ae4357d51a6303c31110c793133ba91d51aba180a56f685e0ab66ec0c5ef8c7b"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.7/ize_1.1.7_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d4291e1e58824b52eb83183bdd44ef182dbbf5c7445948e449f0053ea65d77ac"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2d0da86666ab623e2688bf07965148e3e9903eac38ddf27da3619bc9b3d24716"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.7/ize_1.1.7_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "870e21546a2393046bcb8d72e008cd03216d80111b4eafe23204b12c4dee39ac"
 
       def install
         bin.install "ize"
