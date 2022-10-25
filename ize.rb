@@ -5,21 +5,21 @@
 class Ize < Formula
   desc "IZE is an opinionated infrastructure wrapper that allows to use multiple tools in one infra"
   homepage "https://ize.sh/"
-  version "1.1.7"
+  version "1.1.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "844e19ed6ccbcfe62a88cfaacbdb95756d4b8f22a33f37590a4c0ac480dda9ae"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.8/ize_1.1.8_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "c01627f7fe774e25cbc490a6137e12a623d1e1b93dd805bd807380f31f7574df"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4bd88b763adcbdbeb0538ffe09d00df027ddca7ef3d0e614621a0e87af7b77cc"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.8/ize_1.1.8_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "dbe1dcc742dce278ad772d452ed3d91ff1d3ed6e8c6fd0837607de40b29e71f9"
 
       def install
         bin.install "ize"
@@ -29,16 +29,16 @@ class Ize < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "cb8ad23c6135caff725ebfe1b30e574ec5570373cf2a6e0c0d88c64aca53615b"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.8/ize_1.1.8_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "a424758a21cb81352f9f878c83eabb8e5e93a510f06980ff9dd1f1bdcb844015"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/1.1.7/ize_1.1.7_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "5bcf2cc4a50b1dbd064af08eb7a626e381d1a17d61bccf021781d823b750e7b2"
+      url "https://github.com/hazelops/ize/releases/download/v1.1.8/ize_1.1.8_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "836db1b95f24f4e845d3c7108c86ca66f0fcc2312bfd03de9f0c01899e9ac01d"
 
       def install
         bin.install "ize"
