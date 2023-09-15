@@ -10,16 +10,16 @@ class Ize < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.11/ize_1.1.11_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "71db3beb4c18d8bf8323129d7b5818942b598b33c3c626fc144865be1a1be4a3"
+      url "https://github.com/hazelops/ize/releases/download/1.1.11/ize_1.1.11_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f52e18c280c522ae07be3e44b9dd32cd3b780cb9d4d69da70cacc70f87e4a1ae"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.11/ize_1.1.11_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d2ec008e7b75411749d08870602ff282471ce897b2c71f9f2cbe3ae38674c638"
+      url "https://github.com/hazelops/ize/releases/download/1.1.11/ize_1.1.11_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6a80f18e6d74385a536e81a114f3b11e20052f6d5ea68ad09444bf5928e7c39f"
 
       def install
         bin.install "ize"
@@ -29,16 +29,16 @@ class Ize < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.11/ize_1.1.11_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "137df2f94f64c14af4e8d1e278de89f12a4a20bac9955ec56a1b6aea802f3991"
+      url "https://github.com/hazelops/ize/releases/download/1.1.11/ize_1.1.11_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "da74c3c73353c1810a4f5f7ea9b5cc677f7d7b670fa6024435e6db2ce306af0b"
 
       def install
         bin.install "ize"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/v1.1.11/ize_1.1.11_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e9f23eb1085b69b4a335ed33d4aadc40d242233ab3863441714e95984029b393"
+      url "https://github.com/hazelops/ize/releases/download/1.1.11/ize_1.1.11_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e37cecc382e96d2f5ebff9d6566624a0159948f3bbbe8af0044acfa60c9e112f"
 
       def install
         bin.install "ize"
