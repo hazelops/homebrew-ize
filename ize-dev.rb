@@ -9,17 +9,17 @@ class IzeDev < Formula
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
+    on_intel do
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6705bf21f26494f4de25ef9562b9ad29f658d028722cd9b454cb5a7c8b26e7a1"
+      sha256 "064a8b98c0aeb60958282f9958df36b91a012fae6804882d09de0f5227cab8ef"
 
       def install
         bin.install "ize"
       end
     end
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "56ada0957038adf2136e3ad358caab550bb7e9a6f2a9f5401f244d0257b6aa31"
+      sha256 "6c593f3f92a5f00b42dcc85c8d0c70a7abd5c00b70272afe53087f6f6368336f"
 
       def install
         bin.install "ize"
@@ -28,20 +28,24 @@ class IzeDev < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "5643f49ed594a2a89cac9c508116a0035e4439450e9c1ff7948c5d0ab33feb95"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "7dcd64195d9ec0066995e46830854c597e30cf7aa34352d651a2192eb058c2cd"
 
-      def install
-        bin.install "ize"
+        def install
+          bin.install "ize"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "0ebc0cf3f248cacb2ffda5b9bec11ec85f291b3304a5cac009886c2c36c57a88"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "b6ce6551a1b968dadcb8f3eef25f2434c1397e42f62344bb2b5ef6f7306a564d"
 
-      def install
-        bin.install "ize"
+        def install
+          bin.install "ize"
+        end
       end
     end
   end
