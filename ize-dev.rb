@@ -9,17 +9,17 @@ class IzeDev < Formula
   license "Apache 2.0"
 
   on_macos do
-    on_intel do
+    if Hardware::CPU.intel?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "fd673bec2f202acf6d55767592dc61697df1c8a729bb4e5c70f1b4cefcfd3212"
+      sha256 "306eb0c54f2db69aa06aca236d9f8b32a777e35788d93b94977fd8b7f9ea12ba"
 
       def install
         bin.install "ize"
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "0eaa927b0afceb66083861bf995f74b6a225b68282592d08ce0755f15d09892b"
+      sha256 "0df1ebba22ad72863cb180187208e693aab7db6739d7f131dbc18cb26a5a1e00"
 
       def install
         bin.install "ize"
@@ -28,24 +28,18 @@ class IzeDev < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "5ade48f8cde200f28d813fb88f2851665a7a95e56e716d5f5d103d5e2501da4c"
-
-        def install
-          bin.install "ize"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "4edefed9bed972c6d62493d3b96912f908ca2b605ae89ff72217e14cb51976d4"
+      def install
+        bin.install "ize"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "921c305083565511b21ad959b1873522a592e4a8fe1f901679bd50a925dd9f37"
-
-        def install
-          bin.install "ize"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hazelops/ize/releases/download/0.0.0-dev/ize_0.0.0-dev_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "cb1516a80ef1c0c5d863f857ce4b1503a71e94365abb0c6cc0e37a75ed6db8ba"
+      def install
+        bin.install "ize"
       end
     end
   end
